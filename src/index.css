@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  body { @apply font-body text-slate-700 bg-white antialiased; }
+  h1, h2, h3 { @apply font-display text-ink; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-teal; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+}
+
+@layer components {
+  .container-content { @apply mx-auto max-w-content px-5 sm:px-8; }
+  .section-pad { @apply py-16 sm:py-24; }
+  /* Gold ledger rule under every section eyebrow */
+  .eyebrow { @apply text-xs font-semibold uppercase tracking-[0.2em] text-teal; }
+  .eyebrow::after { content: ""; @apply block w-10 h-px bg-gold mt-3; }
+}
+
+/* ── Seamless infinite marquee ─────────────────────────────────────────────
+
+ * ─────────────────────────────────────────────────────────────────────────*/
+@layer components {
+  .marquee-outer {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  .marquee-track {
+    animation: marquee-scroll 36s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  @keyframes marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-33.3333%); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+  }
+}
