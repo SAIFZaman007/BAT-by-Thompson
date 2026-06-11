@@ -119,27 +119,27 @@ function TrustVisual() {
 function SecurityFeatureList() {
   const items = [
     {
-      icon: "/src/assets/LockKey.png",
+      icon: "/LockKey.png",
       title: "AES-256 encryption at rest",
       body: "Documents are encrypted with a Fernet key before they ever touch disk storage.",
     },
     {
-      icon: "/src/assets/ShieldCheck.png",
+      icon: "/ShieldCheck.png",
       title: "HTTPS-only transfer",
       body: "All uploads transit over TLS 1.3. Plain-HTTP submissions are rejected.",
     },
     {
-      icon: "/src/assets/Eye.png",
+      icon: "/Eye.png",
       title: "Verification team access only",
       body: "KYC files are accessible solely to authorised reviewers — never shared or indexed.",
     },
     {
-      icon: "/src/assets/Trash.png",
+      icon: "/Trash.png",
       title: "Purged after approval",
       body: "Documents are deleted once KYC status is confirmed to minimise data exposure.",
     },
     {
-      icon: "/src/assets/Note.png",
+      icon: "/Note.png",
       title: "Accepted formats",
       body: "PDF, JPG, PNG — up to 10 MB. File type is verified by magic bytes, not extension.",
     },
